@@ -40,9 +40,8 @@ export default function Component() {
               initial={{ x: 0 }}
               animate={{ x: 230 }}
               transition={{
-                duration: 2,
+                duration: 1,
                 ease: "linear",
-                repeatType: "reverse",
               }}
               onAnimationComplete={() => {
                 setVisible(false);
@@ -77,25 +76,7 @@ export default function Component() {
             >
               Elevate Your
             </motion.span>
-            <motion.span
-              style={{
-                background:
-                  "linear-gradient(to right, #2d2d31, #ffffff, #373737)",
-                backgroundSize: "200% auto",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-              animate={{
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="block bg-gradient-to-r from-white to-zinc-500 text-transparent bg-clip-text"
-            >
+            <motion.span className="block bg-gradient-to-r from-white to-zinc-500 text-transparent bg-clip-text">
               Digital Presence
             </motion.span>
           </h1>
@@ -108,7 +89,26 @@ export default function Component() {
 
           {/* Call-to-action button */}
           <div>
-            <motion.button className="bg-white text-black hover:bg-zinc-200 rounded-md text-lg py-6 px-10 inline-flex items-center overflow-hidden">
+            <motion.button
+              style={{
+                background:
+                  "linear-gradient(to right, #a7a7a7, #ffffff, #7f7f7f)",
+                backgroundSize: "200% auto",
+              }}
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 9,
+                repeat: Infinity,
+                ease: "linear",
+                repeatType: "reverse",
+              }}
+              whileHover={{
+                scale: 1.1,
+              }}
+              className="bg-white text-black hover:bg-zinc-200 rounded-md text-lg py-4 px-10 inline-flex items-center overflow-hidden"
+            >
               <motion.span
                 transition={{
                   duration: 1,
