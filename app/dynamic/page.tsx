@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export default function Page() {
   const scale = useMotionValue(1);
-  const scaleSpring = useSpring(scale, {});
+  const scaleSpring = useSpring(scale, { stiffness: 20 });
   const opacity = useTransform(scale, [1, 5], [0, 1]);
 
   return (
@@ -12,7 +12,7 @@ export default function Page() {
         +
       </button>
       <motion.div
-        style={{ opacity, scale: scaleSpring }} // Use scale.get() for animation
+        style={{ opacity, scale: scaleSpring }}
         className="rounded-full w-32 h-12 bg-yellow-400"
       />
       <button
